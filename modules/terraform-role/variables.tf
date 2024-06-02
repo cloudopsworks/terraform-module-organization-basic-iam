@@ -17,6 +17,6 @@ variable "is_org" {
 }
 
 variable "organization_id" {
-  type = string
+  type    = string
   default = ""
 }
