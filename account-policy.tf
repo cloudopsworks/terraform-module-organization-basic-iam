@@ -4,9 +4,9 @@
 #            Distributed Under Apache v2.0 License
 #
 module "account_policy" {
+  source = "./modules/account-policy"
+  strict = true
   providers = {
     aws = aws.account
   }
-  source = "./modules/account-policy"
-  strict = true
 }
