@@ -1,3 +1,8 @@
+##
+# (c) 2024 - Cloud Ops Works LLC - https://cloudops.works/
+#            On GitHub: https://github.com/cloudopsworks
+#            Distributed Under Apache v2.0 License
+#
 ## -- Built In Policies
 
 data "aws_iam_policy" "apig_admin" {

@@ -3,32 +3,13 @@
 #            On GitHub: https://github.com/cloudopsworks
 #            Distributed Under Apache v2.0 License
 #
-#
 # IAM group access
-data "aws_iam_group" "allow_group" {
-  provider   = aws.parent
-  group_name = var.allowsts_group
-}
-
-data "aws_iam_policy_document" "tf_policy_doc" {
-  provider = aws.parent
-  version  = "2012-10-17"
-
-  statement {
-    sid    = "AllowSTS"
-    effect = "Allow"
-    actions = [
-      "sts:AssumeRole"
-    ]
-    resources = [
-      module.tf_role.role_arn
-    ]
+module "allow_group" {
+  source         = "./modules/group-policy"
+  allowsts_group = var.allowsts_group
+  role_arn       = module.tf_role.role_arn
+  tags           = var.tags
+  providers = {
+    aws = aws.parent
   }
-}
-
-resource "aws_iam_group_policy" "tf_group_policy" {
-  provider = aws.parent
-  name     = "TF-Access-STS-${var.tags.organization_unit}-${var.tags.environment_name}"
-  group    = data.aws_iam_group.allow_group.group_name
-  policy   = data.aws_iam_policy_document.tf_policy_doc.json
 }

@@ -1,3 +1,8 @@
+##
+# (c) 2024 - Cloud Ops Works LLC - https://cloudops.works/
+#            On GitHub: https://github.com/cloudopsworks
+#            Distributed Under Apache v2.0 License
+#
 data "aws_iam_policy_document" "terraform_access_trust" {
   version = "2012-10-17"
   statement {

@@ -1,3 +1,8 @@
+##
+# (c) 2024 - Cloud Ops Works LLC - https://cloudops.works/
+#            On GitHub: https://github.com/cloudopsworks
+#            Distributed Under Apache v2.0 License
+#
 resource "aws_iam_account_password_policy" "account_policy" {
   minimum_password_length        = var.strict ? 25 : 8
   require_lowercase_characters   = true
