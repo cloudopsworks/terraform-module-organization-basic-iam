@@ -24,3 +24,8 @@ variable "parent_account_id" {
 variable "allowsts_group" {
   type = string
 }
+
+variable "extra_tags" {
+  type    = map(string)
+  default = {}
+}
