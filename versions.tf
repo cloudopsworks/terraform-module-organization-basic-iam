@@ -4,17 +4,9 @@ terraform {
     aws = {
       source = "hashicorp/aws"
       configuration_aliases = [
-        aws.parent,
+        aws.default,
         aws.account
       ]
     }
   }
-}
-
-provider "aws" {
-  alias = "parent"
-}
-
-provider "aws" {
-  alias = "account"
 }

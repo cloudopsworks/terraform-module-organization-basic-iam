@@ -10,6 +10,6 @@ module "allow_group" {
   role_arn       = module.tf_role.role_arn
   tags           = var.tags
   providers = {
-    aws = aws.parent
+    aws = aws.default
   }
 }
