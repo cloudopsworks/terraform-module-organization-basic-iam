@@ -8,4 +8,5 @@ module "tf_role" {
   source           = "./modules/terraform-role"
   trust_account_id = var.parent_account_id
   account_id       = var.account_id
+  tags = module.tags.locals.common_tags
 }
