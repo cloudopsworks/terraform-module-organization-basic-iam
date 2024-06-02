@@ -16,3 +16,7 @@ variable "tags" {
 variable "account_id" {
   type = string
 }
+
+variable "parent_account_id" {
+  type = string
+}

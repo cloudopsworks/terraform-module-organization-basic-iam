@@ -6,9 +6,8 @@
 
 module "tf_role" {
   source           = "./modules/terraform-role"
-  trust_account_id = data.aws_caller_identity.current.account_id
+  trust_account_id = var.parent_account_id
   account_id       = var.account_id
-  organization_id  = var.organization_id
 }
 
 # IAM group access

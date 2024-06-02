@@ -10,3 +10,8 @@ variable "account_id" {
 variable "trust_account_id" {
   type = string
 }
+
+variable "is_org" {
+  type    = bool
+  default = false
+}
