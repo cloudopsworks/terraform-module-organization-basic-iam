@@ -1,5 +1,6 @@
 # Organization Admin Policy
 data "aws_iam_policy_document" "tf_organization_admin" {
+  count   = var.is_org ? 1 : 0
   version = "2012-10-17"
 
   statement {
@@ -59,7 +60,8 @@ data "aws_iam_policy_document" "tf_organization_admin" {
 }
 
 resource "aws_iam_role_policy" "terraform_access_organization_admin" {
+  count  = var.is_org ? 1 : 0
   name   = "OrganizationAdmin"
   role   = aws_iam_role.terraform_access.name
-  policy = data.aws_iam_policy_document.tf_organization_admin.json
+  policy = data.aws_iam_policy_document.tf_organization_admin[0].json
 }
