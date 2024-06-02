@@ -20,5 +20,5 @@ resource "aws_iam_role_policy" "terraform_access_sso_admin" {
   count  = var.is_org ? 1 : 0
   name   = "SSOAdmin"
   role   = aws_iam_role.terraform_access.name
-  policy = data.aws_iam_policy_document.tf_sso_admin.json
+  policy = data.aws_iam_policy_document.tf_sso_admin[0].json
 }
