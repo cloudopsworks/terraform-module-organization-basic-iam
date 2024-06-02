@@ -9,7 +9,7 @@ module "tags" {
   version = "1.0.8"
 
   env = {
-    organization_name = var.tags.environment_name
+    organization_name = var.tags.organization_name
     org_unit_name     = var.tags.organization_unit
     environment_name  = var.tags.environment_name
     environment_type  = var.tags.environment_type
