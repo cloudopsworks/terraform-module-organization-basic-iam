@@ -5,8 +5,11 @@
 #
 
 module "tf_role" {
+  providers = {
+    aws = aws.account
+  }
   source           = "./modules/terraform-role"
   trust_account_id = var.parent_account_id
   account_id       = var.account_id
-  tags = module.tags.locals.common_tags
+  tags             = module.tags.locals.common_tags
 }

@@ -20,3 +20,7 @@ variable "account_id" {
 variable "parent_account_id" {
   type = string
 }
+
+variable "allowsts_group" {
+  type = string
+}
