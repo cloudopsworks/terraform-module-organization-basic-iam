@@ -13,3 +13,5 @@ tronador
 .terraform.lock.hcl
 
 .idea/
+
+provider.temp.tf

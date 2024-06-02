@@ -10,12 +10,3 @@ terraform {
     }
   }
 }
-
-# uncomment for validate
-# provider "aws" {
-#   alias = "default"
-# }
-#
-# provider "aws" {
-#   alias = "account"
-# }
