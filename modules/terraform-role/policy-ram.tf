@@ -15,5 +15,5 @@ data "aws_iam_policy_document" "tf_ram_policy_admin" {
 resource "aws_iam_role_policy" "terraform_access_ram_admin" {
   name   = "RAMAdmin"
   role   = aws_iam_role.terraform_access.name
-  policy = data.aws_iam_policy_document.tf_ram_policy_admin[0].json
+  policy = data.aws_iam_policy_document.tf_ram_policy_admin.json
 }
