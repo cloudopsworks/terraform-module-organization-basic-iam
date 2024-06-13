@@ -18,14 +18,21 @@ variable "account_id" {
 }
 
 variable "parent_account_id" {
-  type = string
+  type    = string
+  default = ""
 }
 
 variable "allowsts_group" {
-  type = string
+  type    = string
+  default = ""
 }
 
 variable "extra_tags" {
   type    = map(string)
   default = {}
+}
+
+variable "allow_group" {
+  type    = bool
+  default = true
 }

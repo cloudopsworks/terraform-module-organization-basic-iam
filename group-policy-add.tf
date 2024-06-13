@@ -5,6 +5,7 @@
 #
 # IAM group access
 module "allow_group" {
+  count          = var.allow_group ? 1 : 0
   source         = "./modules/group-policy"
   allowsts_group = var.allowsts_group
   role_arn       = module.tf_role.role_arn
