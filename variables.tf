@@ -41,3 +41,8 @@ variable "is_org" {
   type    = bool
   default = false
 }
+
+variable "organization_id" {
+  type    = string
+  default = ""
+}
