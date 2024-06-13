@@ -14,6 +14,7 @@ module "tf_role" {
   is_org           = var.is_org
   trust_account_id = var.parent_account_id
   account_id       = var.account_id
+  organization_id  = var.organization_id
   tags             = local.all_tags
   providers = {
     aws = aws.account
