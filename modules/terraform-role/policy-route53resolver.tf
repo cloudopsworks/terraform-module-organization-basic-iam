@@ -1,4 +1,4 @@
-data "aws_iam_policy_document" "tf_route53_admin" {
+data "aws_iam_policy_document" "tf_route53_resolver_admin" {
   version = "2012-10-17"
 
   statement {
