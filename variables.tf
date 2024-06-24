@@ -4,7 +4,7 @@
 #            Distributed Under Apache v2.0 License
 #
 
-variable "tags" {
+variable "org" {
   type = object({
     organization_name = string
     organization_unit = string
@@ -18,11 +18,6 @@ variable "account_id" {
 }
 
 variable "parent_account_id" {
-  type    = string
-  default = ""
-}
-
-variable "allowsts_group" {
   type    = string
   default = ""
 }
