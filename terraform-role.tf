@@ -16,7 +16,4 @@ module "tf_role" {
   account_id       = var.account_id
   organization_id  = var.organization_id
   tags             = local.all_tags
-  providers = {
-    aws = aws.account
-  }
 }

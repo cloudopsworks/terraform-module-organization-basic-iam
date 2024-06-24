@@ -6,7 +6,4 @@
 module "account_policy" {
   source = "./modules/account-policy"
   strict = true
-  providers = {
-    aws = aws.account
-  }
 }
