@@ -32,11 +32,6 @@ variable "extra_tags" {
   default = {}
 }
 
-variable "allow_group" {
-  type    = bool
-  default = true
-}
-
 variable "is_org" {
   type    = bool
   default = false
