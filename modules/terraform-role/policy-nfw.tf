@@ -4,8 +4,8 @@ data "aws_iam_policy_document" "tf_nfw_admin" {
   version = "2012-10-17"
 
   statement {
-    sid     = "AllowGlobal"
-    effect  = "Allow"
+    sid    = "AllowGlobal"
+    effect = "Allow"
     actions = [
       "network-firewall:ListRuleGroups"
     ]

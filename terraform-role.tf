@@ -15,5 +15,6 @@ module "tf_role" {
   trust_account_id = var.parent_account_id
   account_id       = var.account_id
   organization_id  = var.organization_id
+  secrets_manager  = var.secrets_manager
   tags             = local.all_tags
 }

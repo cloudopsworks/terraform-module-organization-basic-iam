@@ -3,7 +3,7 @@ data "aws_iam_policy_document" "tf_ram_policy_admin" {
   version = "2012-10-17"
 
   statement {
-    sid = "RAMAdminRole"
+    sid    = "RAMAdminRole"
     effect = "Allow"
     actions = [
       "ram:*"

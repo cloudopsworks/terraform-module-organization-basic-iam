@@ -36,3 +36,8 @@ variable "organization_id" {
   type    = string
   default = ""
 }
+
+variable "secrets_manager" {
+  type    = bool
+  default = false
+}
