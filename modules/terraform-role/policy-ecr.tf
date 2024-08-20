@@ -30,7 +30,7 @@ data "aws_iam_policy_document" "tf_ecr_admin" {
   statement {
     sid     = "EKSComponents"
     effect  = "Allow"
-    actions = ["eks:*"]
+    actions = ["ecr:*"]
     resources = [
       "arn:aws:ecr:*:${var.account_id}:repository/*",
     ]
