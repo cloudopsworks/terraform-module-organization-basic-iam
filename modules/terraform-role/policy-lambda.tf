@@ -6,13 +6,9 @@ data "aws_iam_policy_document" "tf_lambda_admin" {
     sid    = "LambdaAdminAccess"
     effect = "Allow"
     actions = [
-      "lambda:ListFunctions",
-      "lambda:ListEventSourceMappings",
-      "lambda:ListLayerVersions",
-      "lambda:ListLayers",
+      "lambda:List*",
       "lambda:GetAccountSettings",
       "lambda:CreateEventSourceMapping",
-      "lambda:ListCodeSigningConfigs",
       "lambda:CreateCodeSigningConfig"
     ]
     resources = ["*"]

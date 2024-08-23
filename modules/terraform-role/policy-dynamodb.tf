@@ -6,18 +6,9 @@ data "aws_iam_policy_document" "tf_dynamodb_admin" {
     sid    = "AllAccessDynamoDB"
     effect = "Allow"
     actions = [
-      "dynamodb:ListContributorInsights",
-      "dynamodb:DescribeReservedCapacityOfferings",
-      "dynamodb:ListGlobalTables",
-      "dynamodb:ListTables",
-      "dynamodb:DescribeReservedCapacity",
-      "dynamodb:ListBackups",
+      "dynamodb:List*",
       "dynamodb:PurchaseReservedCapacityOfferings",
-      "dynamodb:ListImports",
-      "dynamodb:DescribeLimits",
-      "dynamodb:DescribeEndpoints",
-      "dynamodb:ListExports",
-      "dynamodb:ListStreams"
+      "dynamodb:Describe*",
     ]
     resources = ["*"]
   }
@@ -50,12 +41,9 @@ data "aws_iam_policy_document" "tf_dynamodb_admin" {
   }
 }
 
-resource "aws_iam_policy" "terraform_access_dynamodb_admin" {
-  name   = "TerraformAccessRole-DynamoDBAdmin-policy"
+resource "aws_iam_role_policy" "terraform_access_dynamodb_admin" {
+  name   = "DynamoDBAdmin"
+  role   = aws_iam_role.terraform_access.name
   policy = data.aws_iam_policy_document.tf_dynamodb_admin.json
 }
 
-resource "aws_iam_role_policy_attachment" "terraform_access_dynamodb_admin" {
-  policy_arn = aws_iam_policy.terraform_access_dynamodb_admin.arn
-  role       = aws_iam_role.terraform_access.name
-}
