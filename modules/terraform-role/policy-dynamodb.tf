@@ -51,7 +51,7 @@ data "aws_iam_policy_document" "tf_dynamodb_admin" {
 }
 
 resource "aws_iam_role_policy" "terraform_access_dynamodb_admin" {
-  name   = "S3Admin"
+  name   = "DynamoDBAdmin"
   role   = aws_iam_role.terraform_access.name
   policy = data.aws_iam_policy_document.tf_dynamodb_admin.json
 }
