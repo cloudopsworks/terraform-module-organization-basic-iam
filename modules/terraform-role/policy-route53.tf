@@ -50,10 +50,23 @@ data "aws_iam_policy_document" "tf_route53_admin" {
       "arn:aws:route53:::delegationset/*"
     ]
   }
+
+  statement {
+    sid    = "Route53ResolverAll"
+    effect = "Allow"
+    actions = [
+      "route53resolver:*"
+    ]
+    resources = ["*"]
+  }
 }
 
-resource "aws_iam_role_policy" "terraform_access_route53_admin" {
-  name   = "Route53AdminAccess"
-  role   = aws_iam_role.terraform_access.name
+resource "aws_iam_policy" "terraform_access_route53_admin" {
+  name   = "TerraformAccess-Lambda-policy"
   policy = data.aws_iam_policy_document.tf_route53_admin.json
+}
+
+resource "aws_iam_role_policy_attachment" "terraform_access_route53_admin" {
+  policy_arn = aws_iam_policy.terraform_access_route53_admin.arn
+  role       = aws_iam_role.terraform_access.name
 }

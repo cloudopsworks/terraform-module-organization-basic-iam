@@ -50,8 +50,12 @@ data "aws_iam_policy_document" "tf_dynamodb_admin" {
   }
 }
 
-resource "aws_iam_role_policy" "terraform_access_dynamodb_admin" {
-  name   = "DynamoDBAdmin"
-  role   = aws_iam_role.terraform_access.name
+resource "aws_iam_policy" "terraform_access_dynamodb_admin" {
+  name   = "TerraformAccess-DynamoDBAdmin-policy"
   policy = data.aws_iam_policy_document.tf_dynamodb_admin.json
+}
+
+resource "aws_iam_role_policy_attachment" "terraform_access_dynamodb_admin" {
+  policy_arn = aws_iam_policy.terraform_access_dynamodb_admin.arn
+  role       = aws_iam_role.terraform_access.name
 }
