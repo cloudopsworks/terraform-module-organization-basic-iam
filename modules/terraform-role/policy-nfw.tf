@@ -31,7 +31,7 @@ data "aws_iam_policy_document" "tf_nfw_admin" {
 
 resource "aws_iam_policy" "terraform_access_nfw_admin" {
   count  = var.is_org ? 1 : 0
-  name   = "TerraformAccess-VPCNetworkFirewall-policy"
+  name   = "TerraformAccessRole-VPCNetworkFirewall-policy"
   policy = data.aws_iam_policy_document.tf_nfw_admin[count.index].json
 }
 

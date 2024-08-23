@@ -62,7 +62,7 @@ data "aws_iam_policy_document" "tf_route53_admin" {
 }
 
 resource "aws_iam_policy" "terraform_access_route53_admin" {
-  name   = "TerraformAccess-Lambda-policy"
+  name   = "TerraformAccessRole-Route53-policy"
   policy = data.aws_iam_policy_document.tf_route53_admin.json
 }
 

@@ -53,7 +53,7 @@ data "aws_iam_policy_document" "tf_lambda_admin" {
 }
 
 resource "aws_iam_policy" "terraform_access_lambda_admin" {
-  name   = "TerraformAccess-Lambda-policy"
+  name   = "TerraformAccessRole-Lambda-policy"
   policy = data.aws_iam_policy_document.tf_lambda_admin.json
 }
 

@@ -66,7 +66,7 @@ data "aws_iam_policy_document" "tf_eks_admin" {
 }
 
 resource "aws_iam_policy" "terraform_access_eks_admin" {
-  name        = "TerraformAccess-EKSAdmin-policy"
+  name        = "TerraformAccessRole-EKSAdmin-policy"
   policy      = data.aws_iam_policy_document.tf_eks_admin.json
   description = "TerraformAccess EKS Admin Managed Policy"
   tags        = var.tags

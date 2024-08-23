@@ -51,7 +51,7 @@ data "aws_iam_policy_document" "tf_dynamodb_admin" {
 }
 
 resource "aws_iam_policy" "terraform_access_dynamodb_admin" {
-  name   = "TerraformAccess-DynamoDBAdmin-policy"
+  name   = "TerraformAccessRole-DynamoDBAdmin-policy"
   policy = data.aws_iam_policy_document.tf_dynamodb_admin.json
 }
 
