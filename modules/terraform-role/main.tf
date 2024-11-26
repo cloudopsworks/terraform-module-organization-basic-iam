@@ -11,10 +11,11 @@ data "aws_iam_policy_document" "terraform_access_trust" {
     actions = ["sts:AssumeRole"]
     principals {
       type = "AWS"
-      identifiers = [
+      identifiers = concat([
         "arn:aws:iam::${var.trust_account_id}:user/terraform-access",
         "arn:aws:iam::${var.trust_account_id}:root"
-      ]
+        ],
+      var.trust_accounts_arns)
     }
   }
 }

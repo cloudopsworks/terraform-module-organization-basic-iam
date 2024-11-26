@@ -10,11 +10,12 @@ locals {
   )
 }
 module "tf_role" {
-  source           = "./modules/terraform-role"
-  is_org           = var.is_org
-  trust_account_id = var.parent_account_id
-  account_id       = var.account_id
-  organization_id  = var.organization_id
-  secrets_manager  = var.secrets_manager
-  tags             = local.all_tags
+  source              = "./modules/terraform-role"
+  is_org              = var.is_org
+  trust_account_id    = var.parent_account_id
+  account_id          = var.account_id
+  organization_id     = var.organization_id
+  secrets_manager     = var.secrets_manager
+  trust_accounts_arns = var.trust_accounts_arns
+  tags                = local.all_tags
 }

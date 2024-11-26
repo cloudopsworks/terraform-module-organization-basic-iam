@@ -30,3 +30,8 @@ variable "secrets_manager" {
   type    = bool
   default = false
 }
+
+variable "trust_accounts_arns" {
+  type    = list(string)
+  default = []
+}
