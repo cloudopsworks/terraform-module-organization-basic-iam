@@ -18,7 +18,8 @@ data "aws_iam_policy_document" "tf_ssm_store" {
       "ssm:DeleteParameters"
     ]
     resources = [
-      "arn:aws:ssm:*:${var.account_id}:parameter/*"
+      "arn:aws:ssm:*:${var.account_id}:parameter/*", # Account Parameters
+      "arn:aws:ssm:*::parameter/" # Global parameters
     ]
   }
 
