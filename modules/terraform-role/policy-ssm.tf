@@ -19,7 +19,7 @@ data "aws_iam_policy_document" "tf_ssm_store" {
     ]
     resources = [
       "arn:aws:ssm:*:${var.account_id}:parameter/*", # Account Parameters
-      "arn:aws:ssm:*::parameter/" # Global parameters
+      "arn:aws:ssm:*::parameter/*" # Global parameters
     ]
   }
 
