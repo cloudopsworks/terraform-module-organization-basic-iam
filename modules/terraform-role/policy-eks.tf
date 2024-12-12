@@ -70,6 +70,13 @@ data "aws_iam_policy_document" "tf_eks_admin" {
     actions = ["aps:*"]
     resources = ["*"]
   }
+
+  statement {
+    sid = "Grafana"
+    effect = "Allow"
+    actions = ["grafana:*"]
+    resources = ["*"]
+  }
 }
 
 resource "aws_iam_policy" "terraform_access_eks_admin" {
