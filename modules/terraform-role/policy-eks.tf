@@ -63,6 +63,13 @@ data "aws_iam_policy_document" "tf_eks_admin" {
       "arn:aws:ecr:*:${var.account_id}:repository/*",
     ]
   }
+
+  statement {
+    sid = "APSAdmin"
+    effect = "Allow"
+    actions = ["aps:*"]
+    resources = ["*"]
+  }
 }
 
 resource "aws_iam_policy" "terraform_access_eks_admin" {
