@@ -32,7 +32,7 @@ data "aws_iam_policy_document" "tf_lambda_admin" {
     effect  = "Allow"
     actions = ["lambda:*"]
     resources = [
-      "arn:aws:lambda:*:${var.account_id}:layer:*",
+      "arn:aws:lambda:*:*:layer:*",
       "arn:aws:lambda:*:${var.account_id}:function:*"
     ]
   }
